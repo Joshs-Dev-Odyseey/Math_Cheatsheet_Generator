@@ -1,0 +1,23 @@
+\subsubsection{Gradient}
+\begin{minipage}{0.2\linewidth}
+    \begin{flalign}
+        &\nabla f := \left[\begin{matrix}
+            f_{,1}\\
+            f_{,2}\\
+            \vdots\\
+            f_{,n}\\
+        \end{matrix}\right]&
+    \end{flalign}
+\end{minipage}
+\hfill
+\begin{minipage}{0.8\linewidth}
+    \begin{itemize}
+        \item Faktor-Regel: $\nabla(a \cdot g(x)) = a \cdot \nabla g(x)$
+        \item Summen-Regel: $\nabla(g(x) + h(x)) = \nabla g(x) + \nabla h(x)$
+        \item Linearität: $\nabla(a \cdot g(x) + b \cdot h(x)) = a \cdot \nabla g(x) + b \cdot \nabla h(x)$
+        \item Produkt-Regel: \\
+        $\nabla (g(x) \cdot h(x)) = \nabla g(x) \cdot h(x) + g(x) \cdot \nabla h(x)$
+        \item Ketten-Regel $\mathbb{R} \Rightarrow \mathbb{R}$: $\nabla f = g'(h(x^1; \cdots ; x^n)) \cdot \nabla h(x)$
+        \item Ketten-Regel $\mathbb{R}^n \Rightarrow \mathbb{R}: f'(x) = \langle \nabla g(\vec{h}(x)), \vec{h}'(x) \rangle$
+    \end{itemize}
+\end{minipage}

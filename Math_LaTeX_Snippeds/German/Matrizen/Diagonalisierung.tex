@@ -1,0 +1,86 @@
+\subsubsection{Diagonalisierung einer Matrix}
+\textbf{Formel}
+\begin{flalign}
+    &S^{-1}AS = D = \begin{pmatrix}
+        \lambda_1 & \cdots & 0\\
+        \vdots & \ddots & \vdots\\
+        0 & \cdots & \lambda_n
+    \end{pmatrix} \Leftrightarrow A = SDS^{-1}&\label{eq:Defintion_Diagonalmatrix}\\
+    &A\underbrace{Se_i}_{\vec{x}_i} = S(De_i) = S \lambda_i e_i = \lambda_i \cdot \underbrace{Se_i}_{\vec{x}_i}&\notag\\
+    &\Rightarrow A \vec{x}_i = \lambda_i \vec{x}_i, \vec{x}_i\notag&(\ref{eq:Eigenwertproblem})
+\end{flalign}\\
+
+\textbf{Wichtiges}\\
+\begin{multicols}{2}
+    \begin{itemize}
+        \item A: Eine Matrix
+        \item S: Matrix mit Eigenvektoren
+        \item D: Diagonalmatrix mit Eigenwerten
+        \item $e_i$: Spalteneinheitsvektor
+    \end{itemize}
+\end{multicols}
+
+\textbf{Anleitung}\\
+\begin{enumerate}
+    \item Eigenwerte ausrechnen \ref{eq:Eigenwertproblem}
+    \item Wenn n > 2: Eigenvektoren normieren
+    \item Matrizen D und S aufstellen
+    \item Inverse von S ausrechnen\\
+    \bullet Bei orthogonaler Matrix: $S^{-1} = S^T$\\
+    \bullet Wenn n $\ge$ 3: Mit dem Adjunkten Verfahren die Matrix berechnen (\ref{eq:4x4_Inverse_berechnen})\\
+    \bullet Wenn n > 3 und Matrix nicht orthogonal: Gram-Schmidt-Orthogonalisierungsverfahren
+    \item \ref{eq:Defintion_Diagonalmatrix} aufstellen
+\end{enumerate}
+
+\begin{flalign}
+    &\boxed{3}&\notag\\
+    &\frac{1}{a} \scalebox{0.65}{$\displaystyle \begin{pmatrix}
+            \vec{x}_{EV_{1_1}} & \vec{x}_{EV_{2_1}} & \cdots & \vec{x}_{EV_{n_1}}\\
+            \vec{x}_{EV_{1_2}} & \vec{x}_{EV_{2_2}} & \cdots & \vec{x}_{EV_{n_2}}\\
+            \vdots & \vdots & \ddots & \vdots\\
+            \vec{x}_{EV_{1_n}} & \vec{x}_{EV_{2_n}} & \cdots & \vec{x}_{EV_{n_n}}\\
+        \end{pmatrix}
+        $} \cdot \scalebox{0.65}{$\displaystyle \begin{pmatrix}
+            \lambda_{EW_1} & 0 & \cdots & 0\\
+            0 & \lambda_{EW_2} & \cdots & 0\\
+            \vdots & \vdots & \ddots & \vdots\\
+            0 & 0 & \cdots & \lambda_{EW_n}\\
+        \end{pmatrix}
+        $} \cdot \scalebox{0.65}{$\displaystyle \begin{pmatrix}
+            \vec{x}_{EV_{1_1}} & \vec{x}_{EV_{2_1}} & \cdots & \vec{x}_{EV_{n_1}}\\
+            \vec{x}_{EV_{1_2}} & \vec{x}_{EV_{2_2}} & \cdots & \vec{x}_{EV_{n_2}}\\
+            \vdots & \vdots & \ddots & \vdots\\
+            \vec{x}_{EV_{1_n}} & \vec{x}_{EV_{2_n}} & \cdots & \vec{x}_{EV_{n_n}}\\
+        \end{pmatrix}^{-1}
+        $}&
+\end{flalign}
+
+\subsubsection{Matrix Potenzieren}
+\textbf{Benötigt}\\
+\begin{itemize}
+    \item Bei hohen Potenzen wird die Diagonalisierte Matrix benötigt \ref{eq:Defintion_Diagonalmatrix}
+\end{itemize}
+\textbf{Formel}\\
+\begin{flalign}
+    &A^m = A \cdot A \cdot \ldots \cdot A = SDS^{-1} \cdot SDS^{-1} \cdot \ldots \cdot SDS^{-1}&\\
+    &A^m = SD^mS^{-1}&\notag\\
+    &\frac{1}{a} \scalebox{0.65}{$\displaystyle \begin{pmatrix}
+            \vec{x}_{EV_{1_1}} & \vec{x}_{EV_{2_1}} & \cdots & \vec{x}_{EV_{n_1}}\\
+            \vec{x}_{EV_{1_2}} & \vec{x}_{EV_{2_2}} & \cdots & \vec{x}_{EV_{n_2}}\\
+            \vdots & \vdots & \ddots & \vdots\\
+            \vec{x}_{EV_{1_n}} & \vec{x}_{EV_{2_n}} & \cdots & \vec{x}_{EV_{n_n}}\\
+        \end{pmatrix}
+        $} \cdot \scalebox{0.65}{$\displaystyle \begin{pmatrix}
+            \lambda_{EW_1}^m & 0 & \cdots & 0\\
+            0 & \lambda_{EW_2}^m & \cdots & 0\\
+            \vdots & \vdots & \ddots & \vdots\\
+            0 & 0 & \cdots & \lambda_{EW_n}^m\\
+        \end{pmatrix}
+        $} \cdot \scalebox{0.65}{$\displaystyle \begin{pmatrix}
+            \vec{x}_{EV_{1_1}} & \vec{x}_{EV_{2_1}} & \cdots & \vec{x}_{EV_{n_1}}\\
+            \vec{x}_{EV_{1_2}} & \vec{x}_{EV_{2_2}} & \cdots & \vec{x}_{EV_{n_2}}\\
+            \vdots & \vdots & \ddots & \vdots\\
+            \vec{x}_{EV_{1_n}} & \vec{x}_{EV_{2_n}} & \cdots & \vec{x}_{EV_{n_n}}\\
+        \end{pmatrix}^{-1}
+        $}&\notag\\
+\end{flalign}

@@ -1,0 +1,137 @@
+\subsubsection{Determinante}
+\textbf{Regeln}
+\begin{itemize}
+    \item $\det(A^{T}) = \det(A)$
+    \item $\det(a \cdot A^{T}) = a^n \cdot \det(A)$
+    \item $\det(A \cdot B) = \det(A) \cdot \det(B)$
+    \item $\det(A^{-1}) = \frac{1}{\det(A)}$ falls A regulär
+    \item Zeilen-/Spaltentausch\\ $\det(A) \mapsto -\det(A)$
+    \item Multiplikation einer Zeile/Spalte mit a\\ $\det(A) \mapsto a \cdot \det(A)$
+    \item Invarianz: Subtrahiert man von einer Zeile ein vielfaches einer anderen Zeile, so ändert sich die Determinante nicht
+\end{itemize}
+
+\textbf{2x2 Matrizen}\\
+\begin{minipage}{0.29\linewidth}
+    \vspace{3mm}
+    \begin{flalign}
+        & \det(
+            \begin{matrix}
+                $\tikzmarknode{a}{a}$ & $\tikzmarknode{b}{b}$\\
+                $\tikzmarknode{c}{c}$ & $\tikzmarknode{d}{d}$\\
+            \end{matrix}
+        ) = &\notag
+    \end{flalign}
+    \begin{tikzpicture}[overlay, remember picture]
+        \draw[-, red, thick] (a) to (d);
+        \draw[-, blue, thick] (c) to (b);
+    \end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.39\linewidth}
+    \begin{flalign}
+        &\textcolor{red}{(a \cdot d)} - \textcolor{blue}{(c \cdot b)}& \label{eq:2x2_Determinante}
+    \end{flalign}
+\end{minipage}\\
+\textbf{3x3 Matrizen}\\
+\begin{minipage}{0.39\linewidth}
+    \vspace{3mm}
+    \begin{flalign}
+        & \det(
+            \begin{matrix}
+                $\tikzmarknode{a}{a}$ & $\tikzmarknode{b}{b}$ & $\tikzmarknode{c}{c}$\\
+                $\tikzmarknode{d}{d}$ & $\tikzmarknode{e}{e}$ & $\tikzmarknode{f}{f}$\\
+                $\tikzmarknode{g}{g}$ & $\tikzmarknode{h}{h}$ & $\tikzmarknode{i}{i}$\\
+            \end{matrix}
+        ) = &\notag
+    \end{flalign}
+    \begin{tikzpicture}[overlay, remember picture]
+        \draw[-, red, thick] (a) to (e) to (i);
+        \draw[-, red, thick] (b) to (f) to (g);
+        \draw[-, red, thick] (c) to (d) to (h);
+        \draw[-, blue, thick] (g) to (e) to (c);
+        \draw[-, blue, thick] (h) to (f) to (a);
+        \draw[-, blue, thick] (i) to (d) to (b);
+    \end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.59\linewidth}
+    \begin{flalign}
+        &\textcolor{red}{(a \cdot e \cdot i) + (b \cdot f \cdot g) + (c \cdot d \cdot h)}&\notag\\
+        &\textcolor{blue}{- (g \cdot e \cdot c) - (h \cdot f \cdot a) - (i \cdot d \cdot b)}& \label{eq:3x3_Determinante}
+    \end{flalign}
+\end{minipage}
+
+% Define signed matrix colors
+\definecolor{pos-sign}{RGB}{255,0,0}  % Red for '+'
+\definecolor{neg-sign}{RGB}{0,0,255}  % Blue for '-'
+
+% Custom command for colored sign entries
+\newcommand{\sign}[1]{\if#1+{\color{pos-sign}+}\else{\color{neg-sign}-}\fi}
+
+\textbf{4x4 Matrizen / nxn Matrix}\\
+\begin{minipage}{0.3\linewidth}
+    \vspace{3mm}
+    \begin{flalign}
+    &\mathrel{\vcenter{\hbox{
+        \begin{tikzpicture}[baseline=(A.base), remember picture]
+        % Original coefficient matrix
+        \matrix [matrix of nodes, nodes={inner sep=2mm}, anchor=base, left delimiter=(, right delimiter=),
+                ampersand replacement=\&] (A) {
+            \tikzmarknode{a}{a} \& \tikzmarknode{b}{b} \& \tikzmarknode{c}{c} \& \tikzmarknode{d}{d}\\
+            \tikzmarknode{e}{e} \& \tikzmarknode{f}{f} \& \tikzmarknode{g}{g} \& \tikzmarknode{h}{h}\\
+            \tikzmarknode{i}{i} \& \tikzmarknode{j}{j} \& \tikzmarknode{k}{k} \& \tikzmarknode{l}{l}\\
+            \tikzmarknode{m}{m} \& \tikzmarknode{n}{n} \& \tikzmarknode{o}{o} \& \tikzmarknode{p}{p}\\
+        };
+        % Overlay sign matrix (transparent)
+        \matrix [matrix of nodes, opacity=0.7,
+                nodes={inner sep=2mm}, overlay, ampersand replacement=\&,
+                shift={(0.2,0.15)}] at (A) {
+            \sign{+} \& \sign{-} \& \sign{+} \& \sign{-}\\ 
+            \sign{-} \& \sign{+} \& \sign{-} \& \sign{+}\\ 
+            \sign{+} \& \sign{-} \& \sign{+} \& \sign{-}\\ 
+            \sign{-} \& \sign{+} \& \sign{-} \& \sign{+}\\ 
+        };
+    \end{tikzpicture}}}} = A^{4x4}&\notag
+    \end{flalign}
+\end{minipage}
+\hfill\hspace{-7mm}
+\begin{minipage}{0.6\linewidth}
+    \begin{enumerate}
+        \item Spalte/Reihe mit den meisten Nullen auswählen
+        \item Die Vorfaktoren der Spalten/Reihenwerte mit der Vorzeichenmatrix (\textcolor{red}{+}, \textcolor{blue}{-}) bestimmen
+    \end{enumerate}
+\end{minipage}
+
+\begin{equation}
+    \det(A^{4\times4}) = \overbrace{D_a + D_e + D_i + D_m}^{\boxed{4}} =
+        \begin{cases}
+            \begin{aligned}
+            D_a &= {\color{red}\boxed{+}} a \cdot \det\begin{pmatrix}
+                        f & g & h\\ 
+                        j & k & l\\
+                        n & o & p
+                    \end{pmatrix} \\ 
+            D_e &= {\color{blue}\boxed{-}} e \cdot \det\begin{pmatrix}
+                        b & c & d\\
+                        j & k & l\\
+                        n & o & p
+                    \end{pmatrix} \\
+            \boxed{3}\\
+            D_i &= {\color{red}\boxed{+}} i \cdot \det\begin{pmatrix}
+                        b & c & d\\
+                        f & g & h\\ 
+                        n & o & p
+                    \end{pmatrix} \\
+            D_m &= {\color{blue}\boxed{-}} m \cdot \det\begin{pmatrix}
+                        b & c & d\\
+                        f & g & h\\
+                        j & k & l
+                    \end{pmatrix}
+            \end{aligned}
+        \end{cases}
+    \label{eq:nxn_Determinante}
+\end{equation}
+\begin{enumerate}[start=3]
+    \item 3x3 Matrizen aufstellen durch abdecken der Zeilen und Spalten des jeweiligen Vorfaktors
+    \item Ergebnisse addieren ergibt die Determinante der 4x4 Matrix
+\end{enumerate}

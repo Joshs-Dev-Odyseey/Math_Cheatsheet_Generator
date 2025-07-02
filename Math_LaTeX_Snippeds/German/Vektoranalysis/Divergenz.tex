@@ -1,0 +1,46 @@
+\subsubsection{Divergenz}
+\begin{flalign}
+    &\div{\vec{v}} = v^{1}_{,1} + v^{2}_{,2} + \cdots + v^{n}_{,n}&
+\end{flalign}
+\begin{itemize}
+    \item Quelle: $\div{\vec{v}} > 0$
+    \item Senke:  $\div{\vec{v}} < 0$
+    \item Quellenfrei:  $\div{\vec{v}} = 0$
+    \item Faktor-Regel:  $\div{\vec{v}} > 0$
+    \item Summen-Regel: $\div{\vec{v} + \vec{w}} = \div{\vec{v}} + \div{\vec{w}}$
+    \item Produkt-Regel: $\div{f \cdot \vec{v}} = \langle \nabla f, \vec{v} \rangle + f cdot \div{\vec{v}}$
+\end{itemize}
+
+\begin{flalign*}
+    &\textbf{Beispiel}&\\
+    &\overrightarrow v \left( {x,y,z} \right) = \left( {\begin{array}{*{20}{c}}
+            {3xz - 4{e^{2z}}}\\
+            {2z + 2x{e^{ - 4y}}}\\
+            {3x{y^2}z} 
+        \end{array}} \right)&\\
+    &div\,\overrightarrow v = \overrightarrow \nabla \circ \overrightarrow v&\\
+\end{flalign*}
+
+\begin{minipage}{0.3\linewidth}
+    \begin{flalign*}
+        &\begin{array}{l}
+            \text{1. Gradient berechnen}:\\
+            \dfrac{{\partial {v_x}}}{{\partial x}} =  3z\\ 
+            \dfrac{{\partial {v_y}}}{{\partial y}} = - 4 \cdot 4x \cdot {e^{ - 4y}}\\ 
+            \dfrac{{\partial {v_z}}}{{\partial z}} =  3x{y^2}
+        \end{array}&
+    \end{flalign*}
+\end{minipage}
+\hfill
+\begin{minipage}{0.7\linewidth}
+    \begin{flalign*}
+        &\begin{array}{l}
+            \text{2. Divergenz Gleichung aufstellen}\\
+            div\,\overrightarrow v = \overrightarrow \nabla \circ \overrightarrow v \\
+            = \sum\limits_{i = x}^z {{\partial _i}{v_i}} = 3z - 16x \cdot {e^{ - 4y}} + 3x{y^2}\\
+            \text{3. Punkt in Gleichung einsetzen}\\
+            \text{und Divergenz bestimmen: }
+            P(x_P|y_P|z_P) 
+        \end{array}&
+    \end{flalign*}
+\end{minipage}

@@ -1,0 +1,85 @@
+% Create variables
+\newcommand{\varA}{\ensuremath{\textcolor{brown}{\frac{1}{2}}}} 
+\newcommand{\varB}{\ensuremath{\textcolor{magenta}{\frac{3}{2}}}}
+\newcommand{\TeilerPol}{{\color{blue}q(x)} }
+\newcommand{\SolPol}{{\color{LimeGreen}S(x)} }
+\newcommand{\RestPol}{{\color{purple}r(x)} }
+\newcommand{\Pol}{{\color{teal}P(x)} }
+\newcommand{\M}[2]{\tikzmarknode{#1}{#2}}
+
+\subsubsection{Hornerschema}
+\begin{minipage}{0.45\linewidth}
+    \textbf{Benötigt/Wichtig}\\
+    \begin{itemize}
+        \item Leitkoeffizient von \TeilerPol = 1
+        \item Erratene Nullstelle
+        \item grad(r) < grad(q)
+    \end{itemize}
+    \textbf{Formel}\\
+    \begin{flalign}
+        &\frac{\Pol}{\TeilerPol} = \SolPol + \frac{\RestPol}{\TeilerPol}& \label{eq:Hornerschema}
+    \end{flalign}
+\end{minipage}
+\hfill
+\begin{minipage}{0.55\linewidth}
+    \textbf{Möglichkeiten}
+    \begin{itemize}
+        \item Polynom an einer Steller auswerten
+        \item Polynomdivision
+        \item Zahlensystem umformen
+        \item Taylor Reihen entwickeln \textcolor{red}{noch hinzufügen} % Mathepeter video: Polynome nach Potenzen entwickeln (mit Horner Schema)
+    \end{itemize}
+\end{minipage}
+
+\textbf{Beispiel}\\
+$P(x) = -2x^5 - 3x^4 - 8x^3 - 11x^2 + 4$\\
+
+$q(x) = -2x^2 + 3x -1 = \boxed{\mathbf{\textcolor{cyan}{1}}} -2 (x^2 - \varB + \varA)$\\
+
+\begin{tabular}{>{$}r<{$} | *{6}{>{$}r<{$} }}
+    \boxed{\textcolor{cyan}{2}}  & \M{01}{-2} & \M{02}{-3} & \M{03}{-8} & \M{04}{-11} & \M{05}{0} & \M{06}{4}\\ 
+        \hline
+    \M{10}{\varA} & \M{11}{\cdot} & \M{12}{\cdot} & \M{13}{1} & \M{14}{3} & \M{15}{8} & \M{16}{16}\\
+    \M{20}{\varB} & \M{21}{\cdot} & \M{22}{-3} & \M{23}{-9} & \M{24}{-24} & \M{25}{-48} & \cdot \\
+        \hline
+    \boxed{\textcolor{cyan}{4}}   & \multicolumn{4}{c}{{\color{LimeGreen}\boxed{\M{31}{-2} \quad \M{32}{-6} \quad \M{33}{-16} \quad \M{34}{-32}}}} & \multicolumn{2}{c}{{\color{purple}\boxed{\M{35}{-40} \quad \M{36}{20}}}} 
+\end{tabular}
+
+\begin{flalign*}
+    &\frac{\Pol}{\TeilerPol} \Rightarrow \overbrace{-\frac12}^{\boxed{\mathbf{\textcolor{cyan}{5}}}} \left({\color{LimeGreen}\boxed{-2x^3 -6x^2 - 16x - 32}} + \frac{{\color{purple}\boxed{-40x + 20}}}{{\color{blue}\boxed{x^2 - \frac32 x + \frac12}}}\right)&\\
+    &= x^3 + 3x^2 + 8x + 16 + \frac{-40x + 20}{-2x^2 + 3x -1}&
+\end{flalign*}
+
+\textbf{Anleitung}
+\begin{enumerate}[label={\color{cyan}\arabic*.}]
+    \item Leitkoeffizient von \TeilerPol auf 1 setzen
+    \item Tabelle mit den Koeffizienten und den Punkten erstellen
+    \item Den Pfeilen nach unten entlang \textcolor{red}{addieren} und nach oben  mit jeweiligem Zeilenfaktor (links) \textcolor{blue}{multiplizieren}
+    \item Gr(\Pol) - Gr(\TeilerPol) = Grad(\SolPol). Der Rest gehört zu \RestPol
+    \item Wenn Schritt 1 dann muss durch den ausgeklammerten Faktor geteilt werden. Bei \RestPol Faktor in den Nenner ziehen.
+\end{enumerate}
+
+\begin{tikzpicture}[overlay, remember picture]
+    \draw[->, red, thin] (01) to node[red, left] {+} (31);
+    \draw[->, blue, thin] (31) to node[sloped] {\cdot \varB} (22);
+    \draw[->, blue, thin] (31) to [out=5, in=220] node[pos=0.8, above, sloped] {\cdot \varA} (13);
+    \draw[->, red, thin] (02) to (32);
+    \draw[->, blue, thin] (32) to (14);
+    \draw[->, red, thin] (03) to [bend left] (33);
+    \draw[->, blue, thin] (33) to (15);
+    \draw[->, red, thin] (04) to [bend left] (34);
+    \draw[->, blue, thin] (34) to (16);
+    \draw[->, red, thin] (05) to [bend left] (35);
+    \draw[->, red, thin] (06) to [bend left] (36);
+\end{tikzpicture}
+
+% Erase variables
+\makeatletter
+    \let\varA\@undefined 
+    \let\varB\@undefined 
+    \let\TeilerPol\@undefined
+    \let\Pol\@undefined
+    \let\RestPol\@undefined
+    \let\SolPol\@undefined
+    \let\M\@undefined
+\makeatother

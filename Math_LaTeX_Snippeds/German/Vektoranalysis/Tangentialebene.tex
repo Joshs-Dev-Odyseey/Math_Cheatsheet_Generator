@@ -1,0 +1,35 @@
+\subsubsection{Tangentialebene}
+\begin{flalign}
+    &z = f(x_0; y_0) + \nabla f_x(x_0; y_0) \cdot (x - x_0) + \nabla f_y(x_0; y_0) \cdot (y - y_0)&\\
+    &\vec{n} = \left(\begin{matrix}
+        f_x(x_0; y_0)\\
+        f_y(x_0; y_0)\\
+        -z\\
+    \end{matrix}\right)&\label{eq:Normalenvektor}
+\end{flalign}
+\vspace{4mm}
+\ref{eq:Normalenvektor} Normalenvektor, welcher senkrecht auf der Tangentialebene steht\\
+
+\begin{minipage}{0.4\linewidth}
+    \textbf{Priorisierung um den Gradienten in die Tangentialebenenform zu bekommen}\\
+    \begin{enumerate}
+        \item Faktorisieren
+        \item Additionsverfahren
+        \item Umstellen und Einsetzen
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\linewidth}
+    \textbf{Beispiel}\\
+    \begin{flalign}
+        &f(x,y) = x^3 + x^2 \cdot \ln{y^2 + 1} - 3x&\notag\\
+        &\nabla f(x,y) = \begin{matrix}
+            3x^2 - 2x \cdot \ln{y^2 + 1} - 3\\
+            - \frac{2x^2y}{y^2 + 1}
+        \end{matrix}&\notag\\
+        &f(3;1) = 27 - 9\cdot \ln{2} -9 = 18 - 9\cdot \ln{2}&\notag\\
+        &\nabla f_x (3; 1) = 27 - 6\ln{2} - 3 = 24 - 6\ln{2}&\notag\\
+        &\nabla f_y(3;1) = -9&\notag\\
+        &-45 + 9\ln{2} - 6x\ln{2} + 24x - 9y&\notag
+    \end{flalign}
+\end{minipage}

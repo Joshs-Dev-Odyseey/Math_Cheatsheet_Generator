@@ -1,0 +1,58 @@
+\subsubsection{Substitution}
+\textbf{Normale Substitution}\\
+\begin{flalign}
+    \int_{a}^{b} f(g(x)) dx \quad | \quad u(x) = g(x) \quad &| \quad u'(x) = g'(x) \quad | \quad du = u'(x)\cdot dx \notag&\\
+    \int_{u(a)}^{u(b)} u(x) \frac{1}{u'(x)} \,du \quad &| \quad dx = \frac{1}{u'(x)} \,du&\label{eq:Substitution}\\\notag
+\end{flalign}
+\textbf{Wenn nach einer Substitution noch ein x in der Gleichung vorhanden ist, muss dieses in ein u umgewandelt werden.}
+
+\begin{flalign}
+    \int \frac{e^{2x}}{1+e^{2}} \,dx \quad | \quad u = 1 + e^{x} \quad &| \quad u' = e^{x} \quad | \quad du = e^{x} \,dx \Leftrightarrow du = \frac{1}{e^{x}}&\notag\\
+    \int \frac{e^{2x}}{u} \cdot \frac{1}{e^{x}} \,du = \int \frac{e^{x}}{u} \,du \quad &| \quad u = 1 + e^{x} \Leftrightarrow e^{x} = u - 1&\notag\\
+    \int \frac{u - 1}{u} \,du = \int \frac{u}{u} - \frac{1}{u} \,du &= \int 1 - \frac{1}{u} \,du = \underline{\underline{u - \ln|u| + c}} &\notag
+\end{flalign}\\
+
+\textbf{Umgekehrte Substitution (Example)}\\
+
+\begin{minipage}{0.5\linewidth}
+    \begin{flalign*}
+        &\int_{0}^{a}{\sqrt{x^2 + 2}} \,dx = \int_{0}^{a}{\sqrt{2 (1 + \frac{x^2}{2})}} \,dx&\\
+        &\int_{0}^{a}{\sqrt{2} \sqrt{(1 + \frac{x^2}{2})}} \,dx&
+    \end{flalign*}
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\linewidth}
+    \begin{flalign*}
+        &&\\
+        &\text{Substitution:}&\\
+        &x = \sqrt{2} u &\\
+        &\frac{dx}{du} = \sqrt{2} \Rightarrow dx = \sqrt{2}du&
+    \end{flalign*}
+\end{minipage}
+\begin{flalign*}
+    &\int_{0}^{\frac{a}{\sqrt{2}}}{\sqrt{2} \sqrt{(1 + \frac{(\sqrt{2}u)^2}{2})}} \,\sqrt{2}\,du = \int_{0}^{\frac{a}{\sqrt{2}}}{2 \sqrt{(1 + \frac{2u^2}{2})}} \,du&\\
+    & = 2 \cdot \int_{0}^{\frac{a}{\sqrt{2}}}{\sqrt{(1 + u^2)}} \,du&\\
+\end{flalign*}
+Partielle Integration\\
+\begin{minipage}{0.3\linewidth}
+    \begin{tabular}{r|cc}
+    V & D & I\\
+    \hline
+    + & $\sqrt{1 + u^2}$ & $1$\\
+    - & $\frac{x}{\sqrt{1 + u^2}}$ & $x$\\
+\end{tabular}\\
+\end{minipage}
+\hfill
+\begin{minipage}{0.6\linewidth}
+    \begin{flalign*}
+        &\Rightarrow 2\left(\text{''}\left[u \sqrt{1 + u^2}\right]_{0}^{\frac{a}{\sqrt{2}}}\text{''} - \int_{0}^{\frac{a}{\sqrt{2}}}{\frac{u^2}{\sqrt{1 + u^2}} \,du}\right)&\\
+        & = 2\left(\text{''''} - \int_{0}^{\frac{a}{\sqrt{2}}}{\frac{(1 + u^2) - 1}{\sqrt{1 + u^2}} \,du}\right)&\\
+    \end{flalign*}
+\end{minipage}
+\begin{flalign*}
+    & = 2\left(\text{''''} - \int_{0}^{\frac{a}{\sqrt{2}}}{\frac{1 + u^2}{\sqrt{1 + u^2}} \,du}  - \int_{0}^{\frac{a}{\sqrt{2}}}{\frac{1}{\sqrt{1 + u^2}} \,du}\right)&\\
+    &= 2\left(\left[u \sqrt{1 + u^2}\right]_{0}^{\frac{a}{\sqrt{2}}} - \int_{0}^{\frac{a}{\sqrt{2}}}{\sqrt{1 + u^2} \,du}  - \int_{0}^{\frac{a}{\sqrt{2}}}{\frac{1}{\sqrt{1 + u^2}} \,du}\right)&\\
+    &\Rightarrow 2F = 2\left(\left[u \sqrt{1 + u^2}\right]_{0}^{\frac{a}{\sqrt{2}}} - \int_{0}^{\frac{a}{\sqrt{2}}}{\frac{1}{\sqrt{1 + u^2}} \,du}\right)&\\
+    & = \left[u \sqrt{1 + u^2}\right]_{0}^{\frac{a}{\sqrt{2}}} - \int_{0}^{\frac{a}{\sqrt{2}}}{\frac{1}{\sqrt{1 + u^2}} \,du} = \left[u \sqrt{1 + u^2} - \arcsin{u}\right]_{0}^{\frac{a}{\sqrt{2}}}&\\
+    & = \frac{a}{\sqrt{2}} \sqrt{1 + (\frac{a}{\sqrt{2}})^2} - \arcsin{\frac{a}{\sqrt{2}}} - 0 = \frac{a}{\sqrt{2}} \sqrt{1 + \frac{1}{2}a^2} - \arcsin{\frac{a}{\sqrt{2}}}&\\
+\end{flalign*}

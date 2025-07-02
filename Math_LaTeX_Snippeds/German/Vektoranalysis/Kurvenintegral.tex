@@ -1,0 +1,41 @@
+\subsubsection{Kurven Integral}
+\begin{minipage}{0.5\linewidth}
+    \begin{flalign}
+        &\textbf{Skalares Kurvenintegral} &\notag\\
+        &\int_{\gamma}{f} \,d\vec{s} = \int_{a}^{b}{f(\vec{\gamma}(t)) \cdot \left| \dot{\vec{\gamma}}(t) \right|} \,dt \label{eq:Skalares_Kurvenintegral}&\\
+        &\textbf{Vektorielles Kurvenintegral}&\notag\\
+        &\int_{\gamma}{\langle \vec{v}(t), d\vec{s} \rangle} = \int_{a}^{b}{ \langle \vec{v}(\vec{\gamma}(t)), \dot{\vec{\gamma}}(t) \rangle} \,dt \label{eq:Vektorielles_Kurvenintegral}&
+    \end{flalign}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\linewidth}
+    \textbf{Benötigt}\\
+    \begin{itemize}
+        \item Funktion (Skalar) oder Vektorfeld (Vektoriell)
+        \item Kurve
+        \item Grenzen der Kurve
+    \end{itemize}
+    \textbf{Anleitung}
+    \begin{enumerate}
+        \item Kurve parameterisieren $\vec{v}$ oder $\vec{w}$
+        \item Tangentialvektor $\vec{\gamma}$
+        \item In 
+        \item Sei $\langle \vec{w}, \hat{e} \rangle =: C \equiv$ konst dann gilt: $I = C \cdot \Delta s$
+    \end{enumerate}
+\end{minipage}
+
+
+\subsubsection{Bogenlänge}
+\begin{minipage}{0.4\linewidth}
+    \begin{flalign}
+        &\Delta s = \int_{a}^{b}{\left|\dot{\vec{\gamma}}(t)\right|} \,dt \label{eq:Kurven_Bogenlänge}&
+    \end{flalign}
+\end{minipage}
+\hfill
+\begin{minipage}{0.6\linewidth}
+    \begin{enumerate}
+        \item Gradient der Kurve ableiten
+        \item Betrag des Gradienten berechnen (Satz des Pythagoras)
+        \item In \ref{eq:Kurven_Bogenlänge} einsetzen und integrieren
+    \end{enumerate}
+\end{minipage}

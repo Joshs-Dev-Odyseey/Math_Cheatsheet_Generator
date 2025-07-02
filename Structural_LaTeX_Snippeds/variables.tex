@@ -1,0 +1,21 @@
+\newcommand{\command}{\operatorname{new command output}}
+\DeclareMathOperator{\Rang}{Rang} 
+
+\newcommand{\varA}{\ensuremath{\textcolor{brown}{\frac{1}{2}}}} 
+\newcommand{\varB}{\ensuremath{\textcolor{magenta}{\frac{3}{2}}}}
+\newcommand{\TeilerPol}{{\color{blue}q(x)} }
+\newcommand{\SolPol}{{\color{LimeGreen}S(x)} }
+\newcommand{\RestPol}{{\color{purple}r(x)} }
+\newcommand{\Pol}{{\color{teal}P(x)} }
+\newcommand{\M}[2]{\tikzmarknode{#1}{#2}}
+
+% Erase variables
+\makeatletter
+    \let\varA\@undefined 
+    \let\varB\@undefined 
+    \let\TeilerPol\@undefined
+    \let\Pol\@undefined
+    \let\RestPol\@undefined
+    \let\SolPol\@undefined
+    \let\M\@undefined
+\makeatother

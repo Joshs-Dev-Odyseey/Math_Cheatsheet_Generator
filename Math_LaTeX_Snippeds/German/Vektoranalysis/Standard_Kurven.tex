@@ -1,0 +1,45 @@
+\subsubsection{Standardkurven}
+\begin{minipage}{0.45\linewidth}
+    \begin{flalign}
+        &\textbf{Kreis mit Mittelpunkt M}&\notag\\
+        &s(\tau) = M + \left[\begin{matrix}
+            R \cdot \cos{\tau}\\
+            R \cdot \sin{\tau}
+        \end{matrix}\right]&\\
+        &\textbf{Zylinder}&\notag\\
+        &P(\varphi;z) = \left[\begin{matrix}
+            R \cdot \cos{\varphi}\\
+            R \cdot \sin{\varphi}\\
+            z\\
+        \end{matrix}\right]&\\
+        &\varphi \in \left[ 0, 2\pi \right[ ;z \in \left[0, H\right]&\notag\\
+        &\textbf{Kugel}&\notag\\
+            &P(\theta;\varphi) = \left[\begin{matrix}
+            R \cdot \sin{\theta} \cdot \cos{\varphi}\\
+            R \cdot \sin{\theta} \cdot \sin{\varphi}\\
+            R \cdot \cos{\theta}\\
+        \end{matrix}\right]&\\
+        &\theta \in \left[ 0, \pi \right[ ;\varphi \in \left[0, 2\pi\right[&\notag
+    \end{flalign}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\linewidth}
+    \begin{flalign}
+        &\textbf{Kegel}&\notag\\
+        &P(\varphi;r) = \left[\begin{matrix}
+            r \cdot \cos{\varphi}\\
+            r \cdot \sin{\varphi}\\
+            \frac{H}{R} \cdot r\\
+        \end{matrix}\right]&\\
+        &\varphi \in \left[ 0, 2\pi \right[ ;r \in \left[0, R\right]&\notag\\
+        &\textbf{Turnus}&\notag\\
+            &P(\theta;\varphi) = \left[\begin{matrix}
+            (R + r \cdot \sin{\theta}) \cdot \cos{\varphi}\\
+            (R + r \cdot \sin{\theta}) \cdot \sin{\varphi}\\
+            r \cdot \cos{\theta}\\
+        \end{matrix}\right]&\\
+        &\theta , \varphi \in \left[0, 2\pi\right[&\notag
+    \end{flalign}
+\end{minipage}
+
+R = Radius | r = Variable

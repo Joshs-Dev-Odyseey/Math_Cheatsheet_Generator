@@ -1,0 +1,73 @@
+\subsubsection{Einheitskreis}
+\begin{tikzpicture}[scale=3, transform shape, cap=round,>=latex, every node/.style={scale=0.25}] 
+    % draw the coordinates
+    \draw[-] (-1.05cm,0cm) -- (1.05cm,0cm);
+    \draw[-] (0cm,-1.05cm) -- (0cm,1.05cm);
+
+    % draw the unit circle
+    \draw[thick] (0cm,0cm) circle(1cm);
+
+    \foreach \x in {0,30,45,60,90,120,135,150,180,210,225,240,270,300,315,330} {
+            % lines from center to point
+            \draw[gray] (0cm,0cm) -- (\x:1cm);
+            % dots at each point
+            \filldraw[black] (\x:1cm) circle(0.4pt);
+            % draw each angle in degrees
+            \draw (\x:0.6cm) node[fill=white] {$\x^\circ$};
+    }
+
+    \draw[Cerulean](0cm,0cm) -- (15:1cm);
+    \filldraw[Cerulean] (15:1cm) circle(0.4pt);
+    \draw (15:0.7cm) node[Cerulean,fill=white] {$\theta$};
+    \draw (13:1cm) node[above right,Cerulean] {$\left(\cos(\theta), \sin(\theta)\right)$};
+
+    % draw each angle in radians
+    \foreach \x/\xtext in {
+        30/\frac{\pi}{6},
+        45/\frac{\pi}{4},
+        60/\frac{\pi}{3},
+        90/\frac{\pi}{2},
+        120/\frac{2\pi}{3},
+        135/\frac{3\pi}{4},
+        150/\frac{5\pi}{6},
+        180/\pi,
+        210/\frac{7\pi}{6},
+        225/\frac{5\pi}{4},
+        240/\frac{4\pi}{3},
+        270/\frac{3\pi}{2},
+        300/\frac{5\pi}{3},
+        315/\frac{7\pi}{4},
+        330/\frac{11\pi}{6},
+        360/2\pi}
+            \draw (\x:0.85cm) node[fill=white] {$\xtext$};
+
+    \node[right] at (0:1.05cm) {$\left(1,0\right)$};
+    \node[above] at (90:1.05cm) {$\left(0,1\right)$};
+    \node[left] at (180:1.05cm) {$\left(-1,0\right)$};
+    \node[below] at (270:1.05cm) {$\left(0,-1\right)$};
+
+    \foreach \x/\xtext/\y in {
+        150/-\frac{\sqrt{3}}{2}/\frac{1}{2},
+        135/-\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+        120/-\frac{1}{2}/\frac{\sqrt{3}}{2}}
+            \draw (\x:1cm) node[above left] {$\left(\xtext,\y\right)$};
+
+    
+    \foreach \x/\xtext/\y in {
+        30/\frac{\sqrt{3}}{2}/\frac{1}{2},
+        45/\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+        60/\frac{1}{2}/\frac{\sqrt{3}}{2}}
+            \draw (\x:1cm) node[above right] {$\left(\xtext,\y\right)$}; 
+    
+    \foreach \x/\xtext/\y in { 
+        210/-\frac{\sqrt{3}}{2}/-\frac{1}{2},
+        225/-\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+        240/-\frac{1}{2}/-\frac{\sqrt{3}}{2} }
+            \draw (\x:1cm) node[below left] {$\left(\xtext,\y\right)$};
+
+    \foreach \x/\xtext/\y in {
+        330/\frac{\sqrt{3}}{2}/-\frac{1}{2},
+        315/\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+        300/\frac{1}{2}/-\frac{\sqrt{3}}{2}}
+            \draw (\x:1cm) node[below right] {$\left(\xtext,\y\right)$};
+\end{tikzpicture}\\

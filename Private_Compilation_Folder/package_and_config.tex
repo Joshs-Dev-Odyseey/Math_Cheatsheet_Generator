@@ -1,0 +1,139 @@
+\usepackage[top=1.7cm, bottom=0.1cm, left=0.5cm, right=0.5cm, headheight=1cm, footskip=0.3cm]{geometry}
+\usepackage{fancyhdr} % Customizable headers and footers
+\usepackage{multicol} % Allows for multiple columns
+\usepackage[utf8]{inputenc} % Ensures UTF-8 encoding
+\usepackage[ngerman]{babel} % Language support for German
+\usepackage{amsmath, amsfonts} % Math packages for symbols and fonts
+\usepackage{siunitx} % Write math units 
+\usepackage{lmodern} % Enhances font quality
+\usepackage{graphicx} % For including images
+\usepackage[normalem]{ulem} % Provides underlining capabilities
+\usepackage[dvipsnames, table]{xcolor} % Adds color options, including for tables
+\usepackage{enumitem} % Customizable lists
+\usepackage{mathabx} % Additional math symbols
+\usepackage{dsfont} % For the unity matrix symbol
+\usepackage{colortbl} % Color options for tables
+\usepackage{mathtools} % Additional tools for mathematical typesetting
+\usepackage{relsize} % For adjusting fontsizes of equations
+\usepackage{scalefnt} % For adjusting fontsizes
+\usepackage{wallpaper} % Allows adding wallpaper backgrounds
+\usepackage{changepage} % Enables adjustments to margins
+\usepackage{tikz} % Graphics for drawing and illustration
+\usetikzlibrary{tikzmark} % Use TikZ's method of remembering a position on a page
+\usetikzlibrary{arrows.meta}  % For advanced arrows
+\usetikzlibrary{matrix}
+\usetikzlibrary{shapes.geometric}
+\usepackage{pgfplots} % For visualizing plots
+\usepackage{tabularx} % Advanced table formatting
+\usepackage{booktabs}
+\usepackage[skins]{tcolorbox} % Colored boxes with advanced options
+\usepackage{lipsum} % For generating dummy text
+\usepackage{bbm} % Font package, especially for blackboard bold characters
+\usepackage{multirow} % Combines rows in tables
+\usepackage{letltxmacro} % Advanced command management
+\usepackage{float} % Control float placement
+\usepackage{amssymb} % Additional math symbols
+\usepackage{algorithm} % Algorithm environment
+\usepackage{algpseudocode} % Pseudocode environment
+\usepackage{leftidx} % Left sub/superscripts
+\usepackage{empheq} % Emphasized equations
+\usepackage{textcomp} % Additional text symbols
+\usepackage{calc} % Arithmetic operations within LaTeX lengths
+\usepackage[makeroom]{cancel} % Strike through terms in equations
+\usepackage{sidecap} % Places captions to the side of figures
+\usepackage{physics} % Additional physics-related commands (e.g., Dirac notation)
+\usepackage{makecell} % More advanced cell formatting in tables
+
+% Custom header format using fancyhdr package
+\pagestyle{fancy}
+\fancyhf{} % Clears default header/footer
+\lhead{\textbf{\subject} - \semester} % Left header
+\rhead{\author} % Right header
+\fancyfoot[C]{Page - \thepage} % Center the page number at the bottom
+
+
+% Custom bullet symbol for itemized lists
+\renewcommand\textbullet{\ensuremath{\bullet}}
+
+% Command to create circled numbers for lists
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+        \node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}}
+
+% Increase row height in tables
+\renewcommand{\arraystretch}{1.5}
+
+\newtcbox{\mathbox}[1][]{
+    nobeforeafter, 
+    colframe=white!30!black, % Frame color
+    colback=white!20, % Background color
+    boxrule=0.5pt, % Border thickness
+    arc=0mm, % Rounded corners
+    before skip = 1mm,
+    right = 1mm,
+    left=1mm,
+    top=0.5mm,
+    bottom=0.5mm,
+    center, % Center the content
+    #1
+}
+
+% Fill the remaining space with blank space (in multicols environment)
+\newcommand{\fillblank}{
+    \vfill\null\columnbreak
+}
+
+% Set the default font family to sans-serif
+\renewcommand{\familydefault}{\sfdefault}
+
+% Custom command for creating a cheatsheet environment
+\newcommand{\cheatsheet}[1]{
+    \let\underbrace\LaTeXunderbrace % Fixes issue with underbrace in custom environments
+    \let\overbrace\LaTeXoverbrace % Fixes issue with overbrace in custom environments
+    \begin{document}
+    \setlength{\columnseprule}{0.4pt} % Sets the rule width between columns
+    \footnotesize
+    \begin{multicols*}{\cols} % Starts a multicolumn environment
+        \setlength{\abovedisplayskip}{\abovedisplayskip - 4mm} % Reduces space above displayed equations
+        \setlength{\belowdisplayskip}{\belowdisplayskip - 3mm} % Reduces space below displayed equations
+    #1
+    \end{multicols*}
+}
+
+% Adjust the space between paragraphs
+\setlength{\parskip}{0.1cm}
+
+% Custom section formatting
+\renewcommand{\section}[1]{
+    \vskip 1pt
+    \par\noindent\textbf{\normalsize#1} % Section title in bold, normal size
+    \vskip -8pt
+    \par\noindent\smash{\rule[-1.5pt]{2cm}{2pt}}\rule{\linewidth  - 2cm}{0.5pt} % Custom underline
+    \par\vspace{-0.5mm}
+}
+
+% Custom subsection formatting
+\renewcommand{\subsection}[2][]{
+    \vskip 1pt
+    \par\noindent\textbf{\small#2} \textbf{\small#1} % Subsection title in bold, small size
+    \vskip -8pt
+    \par\noindent\smash{\rule[-1.5pt]{1cm}{2pt}}\rule{\linewidth - 1cm}{0.5pt} % Custom underline
+    \par\vspace{-1mm}
+}
+
+% Custom subsubsection formatting
+\renewcommand{\subsubsection}[1]{
+    \vskip 1pt
+    \par\noindent\textbf{\footnotesize#1} % Subsubsection title in bold, footnote size
+    \vskip -8pt
+    \rule{\linewidth}{0.5pt} % Horizontal rule across the width
+    \par\vspace{-1mm}
+}
+
+% No paragraph indentation
+\setlength{\parindent}{0pt}
+% Column settings for multicol environment
+\setlength\columnsep{2mm}
+\setlength{\columnseprule}{0pt}
+\setlength{\fboxrule}{0.5pt}
+\setlength{\headsep}{0.5em}
+\setlength{\footskip}{12.0pt}

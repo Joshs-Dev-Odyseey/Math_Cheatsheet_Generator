@@ -1,0 +1,70 @@
+\subsubsection{Standardmatrizen}
+\vspace{3mm}
+\begin{minipage}{0.4\linewidth}
+    \begin{flalign}
+        &\mathds{1} = \left(\begin{matrix}
+            1 & 0\\
+            0 & 1\\
+        \end{matrix}\right)&\label{eq:Einheitsmatrix}\\
+        &\mathbb{P} = \left(\begin{matrix}
+            -1 & 0\\
+            0 & -1\\
+        \end{matrix}\right)&\label{eq:Punktspiegelung}\\
+        &\mathbb{P_y}_x = \left(\begin{matrix}
+            1 & 0\\
+            0 & 0\\
+        \end{matrix}\right)&\label{eq:Projektionsmatrix_X}\\
+        &\mathbb{P_x}_y = \left(\begin{matrix}
+            0 & 0\\
+            0 & 1\\
+        \end{matrix}\right)&\label{eq:Projektionsmatrix_Y}\\
+        &\mathbb{Z}_a = \left(\begin{matrix}
+            a & 0\\
+            0 & a\\
+        \end{matrix}\right)&\label{eq:Zentrische_Komponenten_Streckungs_Matrix}\\
+        &A = \left(\begin{matrix}
+            a & 0\\
+            0 & b\\
+        \end{matrix}\right)&\label{eq:Komponenten_Streckungs_Matrix}
+    \end{flalign}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\linewidth}
+    \begin{flalign}
+        &\mathbb{S_y}_x = \left(\begin{matrix}
+            1 & 0\\
+            0 & -1\\
+        \end{matrix}\right)&\label{eq:X_Spiegelungs_Matrix}\\
+        &\mathbb{S_x}_y = \left(\begin{matrix}
+            -1 & 0\\
+            0 & 1\\
+        \end{matrix}\right)&\label{eq:Y_Spiegelungs_Matrix}\\
+        &\mathbb{R}_{\frac{\pi}{2}} = \left(\begin{matrix}
+            0 & -1\\
+            1 & 0\\
+        \end{matrix}\right)&\label{eq:180_Rotations_Matrix}\\
+        &\mathbb{R_{\varphi}} = \left(\begin{matrix}
+            \cos{\varphi} & -\sin{\varphi}\\
+            \sin{\varphi} & \cos{\varphi}
+        \end{matrix}\right)&\label{eq:Phi_Rotations_Matrix}\\
+        &\mathbb{R_{-\varphi}} = \left(\begin{matrix}
+            \cos{\varphi} & \sin{\varphi}\\
+            -\sin{\varphi} & \cos{\varphi}
+        \end{matrix}\right)&\label{eq:eq:Anti_Phi_Rotations_Matrix}
+    \end{flalign}
+\end{minipage}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item \ref{eq:Einheitsmatrix}: Einheitsmatrix
+        \item \ref{eq:Punktspiegelung}: Punktspiegelungs-matrix
+        \item \ref{eq:Projektionsmatrix_X}: Projektionsmatrix auf X-Achse
+        \item \ref{eq:Projektionsmatrix_Y}: Projektionsmatrix auf Y-Achse
+        \item \ref{eq:Zentrische_Komponenten_Streckungs_Matrix}: Zentrische Komponenten Streckungs Matrix
+        \item \ref{eq:Komponenten_Streckungs_Matrix}: Komponenten Streckungs Matrix
+        \item \ref{eq:X_Spiegelungs_Matrix} Spiegelungs-Matrix an der X-Achse
+        \item \ref{eq:Y_Spiegelungs_Matrix} Spiegelungs-Matrix an der Y-Achse
+        \item \ref{eq:180_Rotations_Matrix} Rotations-Matrix um den Ursprung 180\degree
+        \item \ref{eq:Phi_Rotations_Matrix} Rotations-Matrix mit Winkel \varphi
+        \item \ref{eq:eq:Anti_Phi_Rotations_Matrix} Rotations-Matrix mit Winkel \varphi \,im Gegenuhrezeigersin
+    \end{itemize}
+\end{multicols}

@@ -1,0 +1,160 @@
+\subsubsection{Inverse berechnen mittels Adjunkter Matrix}
+\begin{minipage}{0.5\linewidth}
+    \textbf{Benötigt}\\
+    \begin{itemize}
+        \item Det(A) $\ne 0$
+        \item 2x2 im Kopf | 3x3 mit Taschenrechner | 3x3 - nxn mit Adjunkte Matrix
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\linewidth}
+    \textbf{Wichtiges}\\
+    \begin{itemize}
+        \item Det(A) = 0 $\nRightarrow A^{-1}$\\ Det(A) $\ne 0 \Rightarrow A^{-1}$
+        \item $(a \cdot A)^{-1} = \frac1a \cdot A^{-1}$
+        \item $(A \cdot B)^{-1} = B^{-1} \cdot A^{-1}$
+        \item $(A^T)^{-1} = (A^{-1})^T$
+        \item $(A^{-1})^{-1} = A$
+    \end{itemize}
+\end{minipage}
+
+\textbf{2x2 Matrix}\\
+\begin{flalign}
+    &A = \left[\begin{matrix}
+        a & b\\
+        c & d
+    \end{matrix}\right] \qquad A^{-1} = \frac{1}{ad - bc} \cdot \left[\begin{matrix}
+        d & -b\\
+        -c & a
+    \end{matrix}\right]&
+\end{flalign}
+
+\textbf{Anleitung 3x3, 4x4 - nxn}\\
+\begin{flalign}
+    &A^{-1} = \frac{1}{\det(A)} \cdot \scalebox{0.55}{$\displaystyle \left[
+        \begin{matrix}
+            {\color{red}\boxed{+}}
+            \det(
+            \begin{matrix}
+                f & g & h\\
+                j & k & l\\
+                n & o & p
+            \end{matrix}) &
+            {\color{blue}\boxed{-}}
+            \det(
+            \begin{matrix}
+                e & g & k\\
+                i & k & l\\
+                m & o & p
+            \end{matrix}) &
+            {\color{red}\boxed{+}}
+            \det(
+            \begin{matrix}
+                e & f & h\\
+                i & j & l\\
+                m & n & p  
+            \end{matrix}) &
+            {\color{blue}\boxed{-}}
+            \det(
+            \begin{matrix}
+                e & f & g\\
+                i & j & k\\
+                m & n & o
+            \end{matrix})
+            \\
+            {\color{blue}\boxed{-}}
+            \det(
+            \begin{matrix}
+                b & c & d\\
+                j & k & l\\
+                n & o & p
+            \end{matrix}) &
+            {\color{red}\boxed{+}}
+            \det(
+            \begin{matrix}
+                a & c & d\\
+                i & k & l\\
+                m & o & p
+            \end{matrix}) &
+            {\color{blue}\boxed{-}}
+            \det(
+            \begin{matrix}
+                a & b & d\\
+                i & j & l\\
+                m & n & p  
+            \end{matrix}) &
+            {\color{red}\boxed{+}}
+            \det(
+            \begin{matrix}
+                a & b & c\\
+                i & j & k\\
+                m & n & o
+            \end{matrix})
+            \\
+            {\color{red}\boxed{+}}
+            \det(
+            \begin{matrix}
+                b & c & d\\
+                f & g & h\\
+                n & o & p
+            \end{matrix}) &
+            {\color{blue}\boxed{-}}
+            \det(
+            \begin{matrix}
+                a & c & d\\
+                e & g & h\\
+                m & o & p
+            \end{matrix}) &
+            {\color{red}\boxed{+}}
+            \det(
+            \begin{matrix}
+                a & b & d\\
+                e & f & h\\
+                m & n & p  
+            \end{matrix}) &
+            {\color{blue}\boxed{-}}
+            \det(
+            \begin{matrix}
+                a & b & c\\
+                e & f & g\\
+                m & n & o
+            \end{matrix})
+            \\
+            {\color{blue}\boxed{-}}
+            \det(
+            \begin{matrix}
+                b & c & d\\
+                f & g & h\\
+                j & k & l
+            \end{matrix}) &
+            {\color{red}\boxed{+}}
+            \det(
+            \begin{matrix}
+                a & c & d\\
+                e & g & h\\
+                j & k & l
+            \end{matrix}) &
+            {\color{blue}\boxed{-}}
+            \det(
+            \begin{matrix}
+                a & b & d\\
+                e & f & h\\
+                i & j & l  
+            \end{matrix}) &
+            {\color{red}\boxed{+}}
+            \det(
+            \begin{matrix}
+                a & b & c\\
+                e & f & g\\
+                i & j & k
+            \end{matrix})
+    \end{matrix}\right]^{\mathbf{T}}
+    $}&\label{eq:4x4_Inverse_berechnen}
+\end{flalign}
+
+\begin{enumerate}
+    \item Determinante  von A berechnen
+    \item Determinanten der inneren Matrizen berechnen und das Ergebnis mit jeweiligem Vorzeichen eintragen (3x3 Spaltenweise mit TS ausrechnen)
+    \item Matrix transponieren
+    \item $A \cdot A^{-1} = \mathbb{I}$ prüfen
+\end{enumerate}

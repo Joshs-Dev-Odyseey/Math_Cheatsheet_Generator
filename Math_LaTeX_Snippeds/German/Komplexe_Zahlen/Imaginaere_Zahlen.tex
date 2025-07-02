@@ -1,0 +1,50 @@
+\subsubsection{Komplexe Zahlen}
+\textbf{Allgemeines Komplexe Zahlen}\\
+
+\begin{minipage}{0.4\linewidth}
+    \begin{flalign}
+        &i^2 = -1&
+    \end{flalign}
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\linewidth}
+    \begin{flalign}
+        &\textbf{Arithmetische Form}&\notag\\
+        &z = x + y \cdot i&
+    \end{flalign}
+\end{minipage}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item Realteil von $z:\\
+         \Re{z}$:= x 
+        \item Imaginärteil von $z: \\
+        \Im{z}$:= y\\
+        \item Betrag von $z$:\\
+        $|z|:= \sqrt{x^2 + y^2}$
+        \item Komplex-Konjugierte von $z: z^*:= x-y \cdot i$
+    \end{itemize}
+    
+\end{multicols}
+\begin{flalign}
+    &\textbf{Addition}&\notag\\
+    &z_1 + z_2 = x_1 + x_2 + (y_1 + y_2) \cdot i&\\
+    &\textbf{Subtraktion}&\notag\\
+    &z_1 - z_2 = x_1 - x_2 + (y_1 - y_2) \cdot i&\\
+    &\textbf{Multiplikation}&\notag\\
+    &z_1 \cdot z_2 = x_1 \cdot x_2 - y_1 \cdot y_2 + (x_1 \cdot y_2 + x_2 \cdot y_1) \cdot i&\\
+    &\textbf{Division}&\notag\\
+    &\frac{z_1}{z_2} = \frac{x_1 \cdot x_2 + y_1 \cdot y_2}{x_{2}^{2} + y_{2}^{2}} + \frac{x_2 \cdot y_1 - x_1 \cdot y_2}{x_{2}^{2} + y_{2}^{2}} \cdot i&\\
+    &\textbf{Betrag und Konjugation}&\notag\\
+    &z \cdot z^* = |z|^2&\\
+    &\textbf{Komplexe aus dem Nenner bringen}&\notag\\
+    &\frac{z_1}{z_2} = \frac{z_1 \cdot z_2^*}{|z_2|^2} = \frac{(x_1 + y_1i)(x_2 - y_2i)}{x_2^2 + y_2^2}&
+\end{flalign}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item $|z_1 \cdot z_2| = |z_1| \cdot |z_2|$
+        \item $|\frac{z_1}{z_2}| = \frac{|z_1|}{|z_2|}$
+        \item \textbf{Dreiecks-Ungleichung}\\
+        $|z_1 + z_2| \leq |z_1| + |z_2|$\\
+        $|z_1 - z_2| \ge |z_1| - |z_2|$
+    \end{itemize}
+\end{multicols}

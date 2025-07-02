@@ -1,0 +1,47 @@
+
+
+\begin{tabular}{ccc}
+  \toprule
+  Formel & Eingabe & Resultat \\
+  \midrule
+  $\sum_{k=1}^n k$ & $1 + 2 + \dots + n$ & $\frac{n(n+1)}{2}$ \\
+  \midrule
+  $\int e^x \, dx$ & Stammfunktion & $e^x + C $\\
+  \bottomrule
+\end{tabular}
+
+$
+\begin{array}{|c|c|c|}
+  \hline
+  \textbf{Formel} & \textbf{Eingabe} & \textbf{Resultat} \\
+  \hline
+  x^2 + y^2 = z^2 & (3^2 + 4^2 = 5^2) & \sqrt{25} \\
+  \hline
+  e^{i\pi} + 1 = 0 & \text{Eulersche Identität} & 0 \\
+  \hline
+\end{array}
+$
+
+
+\begin{tabular}{>{$}r<{$} | *{6}{>{$}r<{$} }}
+    \boxed{\textcolor{cyan}{2}}  & \M{01}{-2} & \M{02}{-3} & \M{03}{-8} & \M{04}{-11} & \M{05}{0} & \M{06}{4}\\ 
+        \hline
+    \M{10}{\varA} & \M{11}{\cdot} & \M{12}{\cdot} & \M{13}{1} & \M{14}{3} & \M{15}{8} & \M{16}{16}\\
+    \M{20}{\varB} & \M{21}{\cdot} & \M{22}{-3} & \M{23}{-9} & \M{24}{-24} & \M{25}{-48} & \cdot \\
+        \hline
+    \boxed{\textcolor{cyan}{4}}   & \multicolumn{4}{c}{{\color{LimeGreen}\boxed{\M{31}{-2} \quad \M{32}{-6} \quad \M{33}{-16} \quad \M{34}{-32}}}} & \multicolumn{2}{c}{{\color{purple}\boxed{\M{35}{-40} \quad \M{36}{20}}}} 
+\end{tabular}
+
+
+\begin{tabular}{|c|c|c|}
+\hline
+A1 & \tikzmarknode{B1}{B1} & C1 \\
+\hline
+A2 & B2 & \tikzmarknode{C2}{C2} \\
+\hline
+\end{tabular}
+
+\begin{tikzpicture}[overlay, remember picture]
+\draw[->, red, thick] (B1) to [out=0, in=180] (C2);
+\draw[->, blue, thick] (C2) to [bend right] (B1);
+\end{tikzpicture}

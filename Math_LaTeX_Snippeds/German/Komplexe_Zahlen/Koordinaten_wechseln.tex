@@ -1,0 +1,73 @@
+\subsubsection{Koordinaten Wechsel}
+\begin{flalign}
+    &\textbf{Polarkoordinaten} & \notag \\[5pt]
+    &\textbf{Polar zu Kartesisch} & \notag \\
+    &x = r \cdot \cos\phi,\quad y = r \cdot \sin\phi & \\[5pt]
+    &\textbf{Kartesisch zu Polar} & \notag \\
+    &r = \sqrt{x^2 + y^2},\quad \tan\phi = \frac{y}{x} & \\[5pt]
+    &\textbf{Basisvektoren} & \notag \\
+    &\begin{bmatrix}
+        \hat{e}_r \\
+        \hat{e}_\phi
+    \end{bmatrix} = 
+    \begin{bmatrix}
+        \cos\phi & \sin\phi \\
+        -\sin\phi & \cos\phi
+    \end{bmatrix}
+    \begin{bmatrix}
+        \hat{e}_x \\
+        \hat{e}_y
+    \end{bmatrix} & \\[5pt]
+    &\textbf{Integration} & \notag \\
+    &\mathrm{d}x\,\mathrm{d}y \mapsto r\,\mathrm{d}r\,\mathrm{d}\phi & \\[10pt]
+\end{flalign}
+\begin{flalign}
+    &\textbf{Zylinderkoordinaten} & \notag \\[5pt]
+    &\textbf{Zylinder zu Kartesisch} & \notag \\
+    &x = \rho\cos\phi,\quad y = \rho\sin\phi,\quad z = z & \\[5pt]
+    &\textbf{Kartesisch zu Zylinder} & \notag \\
+    &\rho = \sqrt{x^2 + y^2},\quad \sin\phi = \frac{y}{\rho},\quad z = z & \\[5pt]
+    &\textbf{Basisvektoren} & \notag \\
+    &\begin{bmatrix}
+        \hat{e}_\rho \\
+        \hat{e}_\phi \\
+        \hat{e}_z
+    \end{bmatrix} =
+    \begin{bmatrix}
+        \cos\phi & \sin\phi & 0 \\
+        -\sin\phi & \cos\phi & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        \hat{e}_x \\
+        \hat{e}_y \\
+        \hat{e}_z
+    \end{bmatrix} & \\[5pt]
+    &\textbf{Integration} & \notag \\
+    &\mathrm{d}A\,\mathrm{d}z \mapsto \rho\,\mathrm{d}\phi\,\mathrm{d}\rho\,\mathrm{d}z &
+\end{flalign}  
+\begin{flalign}
+    &\textbf{Kugelkoordinaten} & \notag \\[5pt]
+    &\textbf{Kugel zu Kartesisch} & \notag \\
+    &x = r\sin\theta\cos\phi,\ y = r\sin\theta\sin\phi,\ z = r\cos\theta & \\[5pt]
+    &\textbf{Kartesisch zu Kugel} & \notag \\
+    &r = \sqrt{x^2 + y^2 + z^2},\ \tan\phi = \frac{y}{x},\ \cos\theta = \frac{z}{r} & \\[5pt]
+    &\textbf{Basisvektoren} & \notag \\
+    &\begin{bmatrix}
+        \hat{e}_r \\
+        \hat{e}_\theta \\
+        \hat{e}_\phi
+    \end{bmatrix} = 
+    \begin{bmatrix}
+        \sin\theta\cos\phi & \sin\theta\sin\phi & \cos\theta \\
+        \cos\theta\cos\phi & \cos\theta\sin\phi & -\sin\theta \\
+        -\sin\phi & \cos\phi & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+        \hat{e}_x \\
+        \hat{e}_y \\
+        \hat{e}_z
+    \end{bmatrix} & \\[5pt] 
+    &\textbf{Integration} & \notag \\
+    &\mathrm{d}V \mapsto r^2\sin\theta\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}\phi &
+\end{flalign}

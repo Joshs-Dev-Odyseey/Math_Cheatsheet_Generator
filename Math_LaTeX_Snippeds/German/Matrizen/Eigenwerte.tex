@@ -1,0 +1,96 @@
+\newcommand{\Rang}[1]{Rang{#1}}
+
+\subsubsection{Eigenwerte}
+\textbf{Formeln}\\
+\begin{flalign}
+    &\textbf{Charakteristisches Polynom}&\notag\\
+    &p_A(\lambda) = \det(\lambda \cdot \mathds{1} - A)&\label{eq:Char_Polynom}\\
+    &p_A(\lambda) = a_n \cdot \lambda^n + a_{n - 1} \cdot \lambda^{n - 1} + \cdots + a_1 \cdot \lambda + a_0&\label{eq:Char_Polynom_ausmultipliziert}\\
+    &\textbf{Eigenwertproblem}&\notag\\
+    &A\vec{x} = \lambda \cdot \vec{x}, \qquad \vec{x} \ne \vec{0}&\label{eq:Eigenwertproblem}\\
+    &\textbf{Wichtiger Satz}&\notag\\
+    &\Rang(A) = n \Leftrightarrow \det(A) \ne 0 \Leftrightarrow A^{-1} \nexists &\notag\\
+    &\Leftrightarrow A \vec{x} = \vec{0} \leftrightarrow \vec{x} = \vec{0} \Leftrightarrow \lambda = 0 \text{ }\cancel{\in} \operatorname{EW}(A)&
+\end{flalign}\\
+\textbf{Wichtiges}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item $\lambda$ = Eigenwert
+        \item $\vec{x}$ = Eigenvektor
+        \item $a_n = 1$
+        \item $a_{n-1} = -\tr(A)$
+        \item $a_0 = (-1)^n \cdot \det(A)$
+    \end{itemize}
+\end{multicols}
+\textbf{Anleitung}\\
+\begin{enumerate}
+    \item Gleichung des Charakteristischen Polynoms aufstellen
+    \item Determinante berechnen mit einer der folgenden Optionen:\\
+        \bullet \ref{eq:3x3_Determinante} 3$\times$3 Determinante - Regel von Sarü\\
+        \bullet \ref{eq:nxn_Determinante} N$\times$N Determinante
+    \item \ref{eq:Char_Polynom_ausmultipliziert} $\Leftrightarrow$ Charakteristisches Polynom\\
+        \bullet Hinterer Teil zusammenfassen\\
+        \bullet Grad n \qquad  \bullet Max. n Lösungen\\
+        \bullet $n = 2: p_A(\lambda) = \lambda^2 -\tr(A) \cdot \lambda + \det(A)$\\
+        \bullet $n = 2$ falls $D > 0$: Mitternachtsformel \ref{eq:Mitternachtsformel}\\
+        \bullet $n > 2$ Hornerschema \ref{eq:Hornerschema}
+    \item Prüfung der Ergebnisse der Eigenwerte\\
+    \bullet $\tr(A) = \sum_{k = n}^{n}{\lambda_k}$ \qquad   \bullet $\det(A) = \prod_{k = n}^{n}{\lambda_k}$\\
+    \bullet EW von $A^{-1} = \frac{1}{\lambda}$
+    \item Ausrechnen der Eigenvektoren ist bei den Eigenvektoren beschrieben
+\end{enumerate}
+
+\begin{flalign*}
+    &\boxed{1}: \ref{eq:Eigenwertproblem} \Rightarrow A \vec{x} - \lambda \vec{x} = \vec{0}&\\
+    &\ref{eq:Char_Polynom}: (\underbrace{A - \mathds{1} \lambda}_{A}) \vec{x} = \vec{0}&\\
+    &\boxed{2}: \det(\overbrace{\begin{pmatrix}
+        A_{11} - \lambda_{11} & A_{12} & A_{13}\\
+        A_{21} & A_{22} - \lambda_{22} & A_{23}\\
+        A_{31} & A_{32} & A_{33} - \lambda_{33}\\
+    \end{pmatrix}}^{A}) \vec{x} \stackrel{!}{=} \vec{0}&\\
+    &\boxed{3}: \ref{eq:Char_Polynom_ausmultipliziert}: p_A(\lambda) = a_n \cdot \lambda^n + a_{n - 1} \cdot \lambda^{n - 1} + \cdots + a_1 \cdot \lambda + \overbrace{a_0}^{\text{Hinterer Teil}}&\\
+\end{flalign*}
+\subsubsection{Eigenvektoren}
+\textbf{Notwendig für die Berechnung der Eigenvektoren}
+\begin{itemize}
+    \item Eigenwerte
+\end{itemize}
+\textbf{Anleitung}\\
+\begin{enumerate}
+    \item Für jeden Eigenwert eine Tabelle aufstellen mit $A - \lambda_n$ damit es zum Rangverlust kommt
+    \item Mittels Gauss links unten Nullen Produzieren
+    \item Mittels Treppentrick freie Parameter bestimmen
+    \item Einsetzen
+    \item Faktor aus/rein multiplizieren, damit es ein ganzzahligen EW gibt
+\end{enumerate}
+
+\begin{flalign*}
+    &\boxed{1}: \textbf{Eigenvektor zu $\lambda_i$}&\\
+    &\boxed{2}: \begin{tabular}{*{3}{>{$}r<{$}|} >{$}r<{$}}
+        x & y & z & 0\\ 
+            \hline
+        A_{11} - \lambda_i & A_{12} & A_{13} & 0\\
+        A_{21} & A_{22} - \lambda_i & A_{23} & 0\\
+        A_{31} & A_{32} & A_{33} - \lambda_i & 0\\
+    \end{tabular}&\\
+    &\qquad \qquad \qquad \vdots&\\
+    &\boxed{3}: \begin{tabular}{*{3}{>{$}r<{$}|} >{$}r<{$}}
+        x & y & z & 0\\ 
+            \hline
+        \boxed{A_{11} - \lambda_i} & A_{12} & A_{13} & 0\\
+        \cline{1-1}
+        0 & \boxed{A_{22} - \lambda_i} & A_{23} & 0\\
+        \cline{2-2}
+        0 & 0 & \boxed{A_{33} - \lambda_i} & 0\\
+        \cline{3-3}
+    \end{tabular}&\\
+    &\boxed{4}: \begin{pmatrix}
+        t \cdot x\\
+        t \cdot y\\
+        t
+    \end{pmatrix} \Rightarrow \boxed{5}: t \cdot \begin{pmatrix}
+        x\\
+        y\\
+        1
+    \end{pmatrix}, t \in \mathds{R}\backslash \{0\}&
+\end{flalign*}

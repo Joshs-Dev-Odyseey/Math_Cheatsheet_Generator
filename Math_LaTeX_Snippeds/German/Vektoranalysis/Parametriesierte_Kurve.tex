@@ -1,0 +1,43 @@
+\subsubsection{Parameteriesierte Kurve}
+\vspace{3mm}
+\begin{minipage}{0.4\linewidth}
+    \textbf{Anleitung}
+    \begin{enumerate}
+        \item Funktion zeichnen
+        \item $\tau$ einsetzen und Wert für jeweilige Achse bestimmen
+        \item Grenzen bestimmen
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\linewidth}
+    \textbf{Formeln}\\
+    \begin{flalign}
+        &\gamma: \left[\tau_{0}, \tau_{E}\right] \Rightarrow \mathbb{R}^n&\notag\\
+        &\tau \mapsto \vec{\gamma}(\tau) := \left[\begin{matrix}
+            \gamma_1(\tau)\\
+            \gamma_2(\tau)\\
+            \vdots\\
+            \gamma_n(\tau)\\
+        \end{matrix}\right]&
+    \end{flalign}
+\end{minipage}
+
+\begin{minipage}{0.5\linewidth}
+    \begin{itemize}
+        \item Geschwindigkeitsvektor:\\ $\vec{v}(\tau) := \dot{\vec{\gamma}}(\tau)$
+        \item Bahngeschwindigkeit:\\ $\vec{v}(\tau) := \left|\vec{v}(\tau)\right|$
+        \item Bahnvektor für $\vec{v}(\tau) \ne 0:\\ \hat{e}(\tau) := \hat{v}(\tau)$
+        \item Beschleunigungsvektor:\\ $\vec{a}(\tau) := \dot{v}(\tau)$
+    \end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+    \begin{itemize}
+        \item Bahnbeschleunigung:\\ $a_B(\tau) := \langle a(\tau), \hat{e}(\tau)⟩$
+        \item Bahn:\\ $B := \vec{\gamma}(\left[\tau_0, \tau_E\right])$
+        \item Ortsvektor zeigt von Ursprung auf Punkt der Bahn
+        \item $x^2 \Rightarrow \vec{\gamma} = \left(\begin{matrix}
+            t\\
+            t^2
+        \end{matrix}\right)$
+    \end{itemize}
+\end{minipage}
